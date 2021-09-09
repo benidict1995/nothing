@@ -1,0 +1,10 @@
+ext{
+    metroMartDirs = [
+            'src/main/res',
+            'src/main/res-metromart'
+    ]
+    metroFoodDirs = [
+            'src/main/res',
+            'src/main/res-metrofood'
+    ]
+}

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">nothing</string>
+
+    <string name="onboarding_1">OnBoarding 1</string>
+    <string name="onboarding_2">OnBoarding 2</string>
+    <string name="onboarding_3">OnBoarding 3</string>
+    <string name="onboarding_4">OnBoarding 4</string>
+
+    <string name="btn_login">Login</string>
+    <string name="btn_sign_up">Sign Up</string>
+</resources>

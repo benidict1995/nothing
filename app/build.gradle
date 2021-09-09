@@ -1,0 +1,81 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+def metroMartResources = rootProject.ext.metroMartDirs
+def metroFoodResources = rootProject.ext.metroFoodDirs
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.metromart.nothing"
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    sourceSets{
+        main{
+            res.srcDirs = [
+                    metroMartResources,
+                    metroFoodResources
+            ]
+        }
+    }
+}
+
+dependencies {
+
+    implementation (project(":data"))
+    implementation (project(":common"))
+
+    implementation Dependencies.OKHTTP
+    implementation Dependencies.OKHTTP_INTERCEPTOR
+    implementation Dependencies.RETROFIT
+    implementation Dependencies.RETROFIT_SERIALIZATION
+
+    implementation Dependencies.COROUTINE_CORE
+    implementation Dependencies.COROUTINE_ANDROID
+
+    implementation Dependencies.ANDROID_DAGGER_HILT
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    kapt Dependencies.ANDROID_DAGGER_HILT_COMPILER
+
+    implementation Dependencies.ANDROIDX_CORE
+    implementation Dependencies.ANDROIDX_FRAGMENT
+    implementation Dependencies.ANDROIDX_APPCOMPAT
+    implementation Dependencies.ANDROIDX_MATERIAL
+    implementation Dependencies.ANDROIDX_CONSTRAINT
+
+    testImplementation Dependencies.TEST_JUNIT
+    androidTestImplementation Dependencies.TEST_EXT_JUNIT
+    androidTestImplementation Dependencies.TEST_ESPRESSO_CORE
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.metromart.nothing.global.login.LoginFragment"
+        android:label="LoginFragment"
+        >
+
+        <action
+            android:id="@+id/action_login_to_user_details_form"
+            app:destination="@+id/userDetailsFormFragment"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/userDetailsFormFragment"
+        android:name="com.metromart.nothing.global.register.userdetailsform.UserDetailsFormFragment"
+        android:label="UserDetailsFormFragment"
+        tools:layout="@layout/fragment_user_details_form"
+        >
+
+        <action
+            android:id="@+id/action_user_details_form_to_verify_number"
+            app:destination="@+id/verifyNumberFragment"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/verifyNumberFragment"
+        android:name="com.metromart.nothing.global.register.verifynumber.VerifyNumberFragment"
+        android:label="VerifyNumberFragment"
+        tools:layout="@layout/fragment_verify_number"
+        >
+
+        <argument
+            android:name="something"
+            app:argType="string"
+            android:defaultValue="N/A" />
+
+    </fragment>
+
+</navigation>

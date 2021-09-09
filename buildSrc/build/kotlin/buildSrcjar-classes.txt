@@ -1,0 +1,1 @@
+/Users/benidictdulce/Desktop/nothing/buildSrc/build/classes/kotlin/main/Dependencies.class:/Users/benidictdulce/Desktop/nothing/buildSrc/build/classes/kotlin/main/Versions.class

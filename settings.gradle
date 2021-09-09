@@ -1,0 +1,7 @@
+rootProject.name = "nothing"
+include ':app'
+include ':domain'
+include ':data'
+include ':local'
+include ':network'
+include ':common'
